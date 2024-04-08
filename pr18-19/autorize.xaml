@@ -1,0 +1,27 @@
+﻿<Window x:Class="pr18_19.autorize"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:pr18_19"
+        mc:Ignorable="d"
+        Title="Авторизация" Activated="WindowActivated" Height="Auto" Width="300" ResizeMode="NoResize">
+    <StackPanel x:Name="stpanel">
+        <Label>Пользователь</Label>
+        <TextBox x:Name="tbLogin"></TextBox>
+        <Label>Пароль</Label>
+        <PasswordBox x:Name="tbPas" PasswordChar="*"></PasswordBox>
+        <Grid x:Name="grid" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="Captcha" Background="Gray" FontSize="30" TextAlignment="Center" Grid.Row="0"></TextBlock>
+            <Line Grid.Row="0" x:Name="line" Stroke="HotPink"></Line>
+            <TextBox x:Name="tbCaptcha" Grid.Row="1"></TextBox>
+        </Grid>
+        <Button Content="Войти" IsDefault="True" Click="EnterClick"></Button>
+        <Button Content="Отмена" IsCancel="True" Click="EscClick"></Button>
+        <Button Content="Войти как гость" Click="GuestClick"></Button>
+    </StackPanel>
+</Window>
