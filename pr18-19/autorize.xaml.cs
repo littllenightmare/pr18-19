@@ -1,4 +1,5 @@
-﻿using pr18_19.database;
+﻿using Microsoft.EntityFrameworkCore;
+using pr18_19.database;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -63,17 +64,53 @@ namespace pr18_19
         {
             using (ToyshopContext _db = new ToyshopContext())
             {
-                var user = _db.Пользователи.Where(user => user.UserLogin == tbLogin.Text &&
+                var user = _db.Users.Where(user => user.UserLogin == tbLogin.Text &&
                 user.UserPassword == tbPas.Password);
-                if(user.Count()==1 && Captcha.Text == tbCaptcha.Text)
+                if (user.Count() == 1 && Captcha.Text == tbCaptcha.Text)
                 {
                     Data.Login = true;
                     Data.UserSurname = user.First().UserSurname;
                     Data.UserName = user.First().UserName;
-                    Data.UserPatronymic=user.First().UserPatronymic;
-                    _db.Роли
+                    Data.UserPatronymic = user.First().UserPatronymic;
+                    _db.Roles.Load();
+                    Data.Right = user.First().UserRoleNavigation.RoleName;
+                    Close();
+                }
+                else
+                {
+                    if (user.Count() == 1)
+                    {
+                        MessageBox.Show("Повторите ввод капчи");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Логин или пароль неверны. Повторите ввод");
+                    }
+                    GetCaptcha();
+                    if (_countLogin >= 2)
+                    {
+                        stpanel.IsEnabled = false;
+                        _timer.Start();
+                    }
+                    _countLogin++;
+                    tbLogin.Focus();
                 }
             }
-        }        
+        }
+
+        private void EscClick(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void GuestClick(object sender, RoutedEventArgs e)
+        {
+            Data.Login = true;
+            Data.UserSurname = "Гость";
+            Data.Right = "Клиент";
+            Data.UserPatronymic = "";
+            Data.UserName = "";
+            Close();
+        }
     }
 }

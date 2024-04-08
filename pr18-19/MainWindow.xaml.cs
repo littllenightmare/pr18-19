@@ -23,6 +23,7 @@ namespace pr18_19
         {
             InitializeComponent();
         }
+
         private void AddClick(object sender, RoutedEventArgs e)
         {
             Data.asstoy = null;
@@ -288,7 +289,6 @@ namespace pr18_19
         private void nrb2C(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Были обновлены записи, у которых количество больше 700 - стоимость стала 359");
-
         }
         private void nrb3C(object sender, RoutedEventArgs e)
         {

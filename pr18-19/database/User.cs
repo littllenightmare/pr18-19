@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace pr18_19;
+namespace pr18_19.database;
 
 public partial class User
 {

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:pr18_19"
         mc:Ignorable="d"
-        Title="Авторизация" Activated="WindowActivated" Height="Auto" Width="300" ResizeMode="NoResize">
+        Title="Авторизация" Activated="WindowActivated" Width="300" Height="Auto" ResizeMode="NoResize">
     <StackPanel x:Name="stpanel">
         <Label>Пользователь</Label>
         <TextBox x:Name="tbLogin"></TextBox>
