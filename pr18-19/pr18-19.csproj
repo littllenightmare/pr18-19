@@ -12,6 +12,7 @@
   <ItemGroup>
     <None Remove="bm170.ico" />
     <None Remove="MSVisio2808.ico" />
+    <None Remove="Office-in-Vitro2808.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,6 +27,7 @@
   <ItemGroup>
     <Resource Include="bm170.ico" />
     <Resource Include="MSVisio2808.ico" />
+    <Resource Include="Office-in-Vitro2808.ico" />
   </ItemGroup>
 
 </Project>

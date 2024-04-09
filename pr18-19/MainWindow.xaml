@@ -82,15 +82,13 @@
         <Button x:Name="seebtn" Content="Просмотр записи" HorizontalAlignment="Center" Height="45" VerticalAlignment="Center" Width="140" Grid.Column="0" Grid.Row="3" Click="SeeClick"/>
         <Menu Grid.ColumnSpan="3" HorizontalAlignment="Center" Height="20" VerticalAlignment="Top" Width="790">
             <MenuItem Header="Добавить" Click="AddClick"></MenuItem>
-            <Separator Width="10"></Separator>
             <MenuItem Header="Изменить" Click="ReClick"></MenuItem>
-            <Separator Width="10"></Separator>
             <MenuItem Header="Просмотр" Click="SeeClick"></MenuItem>
-            <Separator Width="10"></Separator>
             <MenuItem Header="Удалить" Click="DelClick"></MenuItem>
-            <Separator Width="10"></Separator>
+            <MenuItem Header="Удаление(запрос)" Click="DelzaprClick"></MenuItem>
+            <MenuItem Header="Выборка" Click="viborzaprClick"></MenuItem>
+            <MenuItem Header="Обновление" Click="NewzaprClick"></MenuItem>
             <MenuItem Header="О программе" Click="InfoClick"></MenuItem>
-            <Separator Width="10"></Separator>
             <MenuItem Header="Выход" Click="ExitClick"></MenuItem>
         </Menu>
         <Button Content="Удаление" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="130" Grid.Row="1" Click="DelzaprClick" Grid.Column="1"/>

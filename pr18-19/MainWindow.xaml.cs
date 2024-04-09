@@ -107,11 +107,15 @@ namespace pr18_19
             autorize f = new autorize();
             f.ShowDialog();
             if(Data.Login == false) Close();
-            if (Data.Right == "Администратор") ;
+            if (Data.Right == "Администратор" || Data.Right == "Системный администратор") ;
+            else if (Data.Right == "Помощник администратора")
+            {
+                btndel.IsEnabled = false;
+            }
             else
             {
-               btnadd.IsEnabled = false;
-                btnch.IsEnabled =false;
+                btnadd.IsEnabled = false;
+                btnch.IsEnabled = false;
                 btndel.IsEnabled = false;
             }
             mainWindow.Title = mainWindow.Title + " " + Data.UserSurname + " " + Data.UserName + "("+ Data.Right +")";
@@ -256,43 +260,43 @@ namespace pr18_19
         }
         private void drb2C(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Были удалены записи, у которых количество меньше 5");
+            MessageBox.Show("Будут удалены записи, у которых количество меньше 5");
         }
         private void drb3C(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Были удалены записи, у которых название лего дом");
+            MessageBox.Show("Будут удалены записи, у которых название лего дом");
         }
         private void vrb1C(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Были выбраны записи, начинающиеся на В и заканчивающиеся на а");
+            MessageBox.Show("Будут выбраны записи, начинающиеся на В и заканчивающиеся на а");
         }
         private void vrb2C(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Были выбраны записи, в которых стоимость меньше 1000");
+            MessageBox.Show("Будут выбраны записи, в которых стоимость меньше 1000");
         }
         private void vrb3C(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Были выбраны записи, в которых количество игрушек больше 10");
+            MessageBox.Show("Будут выбраны записи, в которых количество игрушек больше 10");
         }
         private void vrb4C(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Были выбраны записи, у которых возрастные ограничения равны 6+"); ;
+            MessageBox.Show("Будут выбраны записи, у которых возрастные ограничения равны 6+"); ;
         }
         private void vrb5C(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Были выбраны записи, в которых город содержит букву я");
+            MessageBox.Show("Будут выбраны записи, в которых город содержит букву я");
         }
         private void nrb1C(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Были обновлены записи, у которых фабрика СлаймТаун - город стал Коломна");
+            MessageBox.Show("Будут обновлены записи, у которых фабрика СлаймТаун - город стал Коломна");
         }
         private void nrb2C(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Были обновлены записи, у которых количество больше 700 - стоимость стала 359");
+            MessageBox.Show("Будут обновлены записи, у которых количество больше 700 - стоимость стала 359");
         }
         private void nrb3C(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Были обновлены записи, у которых название Венера - возрастные ограничения стали 12+");
+            MessageBox.Show("Будут обновлены записи, у которых название Венера - возрастные ограничения стали 12+");
         }
     }
 }

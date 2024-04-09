@@ -107,7 +107,7 @@ namespace pr18_19
         {
             Data.Login = true;
             Data.UserSurname = "Гость";
-            Data.Right = "Клиент";
+            Data.Right = "Пользователь";
             Data.UserPatronymic = "";
             Data.UserName = "";
             Close();
